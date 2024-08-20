@@ -22,3 +22,6 @@ Commands
 - cd backend_api
 - python manage.py runserver
 -
+
+postgres / admin = Usename & password (POSTGRES)
+sadhana / sadhana = Usename & password (Superuser)
