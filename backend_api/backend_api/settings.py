@@ -136,7 +136,37 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ),
 }
+
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+#     'ROTATE_REFRESH_TOKENS': True,
+#     'BLACKLIST_AFTER_ROTATION': True,
+#     'UPDATE_LAST_LOGIN': True,
+#     'ALGORITHM': 'HS256',
+#     'SIGNING_KEY': settings.SECRET_KEY,
+#     'VERIFYING_KEY': None,
+#     'AUTH_HEADER_TYPES': ('Bearer',),
+#     'USER_ID_FIELD': 'id',
+#     'USER_ID_CLAIM': 'user_id',
+#     'AUTH_TOKEN_CLASSES': ('access', 'refresh'),
+#     'TOKEN_TYPE_CLAIM': 'token_type',
+# }
+
+
+# HTTP/1.1 200 OK
+# Allow: POST, OPTIONS
+# Content-Length: 483
+# Content-Type: application/json
+# Cross-Origin-Opener-Policy: same-origin
+# Date: Wed, 21 Aug 2024 08:50:35 GMT    
+# Referrer-Policy: same-origin
+# Server: WSGIServer/0.2 CPython/3.12.1  
+# Vary: Accept
+# idXNlcl9pZCI6MX0.8oe7tffeTJWZTcyfhbJ8-iCwnBcTZmU4LWG89y5aP4E",
+#     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDMxNjYzNSwiaWF0IjoxNzI0MjMwMjM1LCJqdGkiOiIwNjAwYjdjMGQ3MjM0MGYwYjUxYTAxZDBhYTU3NTYzMyIsInVzZXJfaWQiOjF9.jnbOrM8anCYLbEIgw3a0ALGGR831DgHuc8JMVVQBIv8"
+# }
