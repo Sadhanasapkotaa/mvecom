@@ -1,0 +1,61 @@
+import React from "react";
+import logo from "../logo.svg";
+import SingleProduct from "./SingleProduct";
+
+const CategoryProducts = () => {
+  return (
+    <section className="container mt-4">
+      {/* Latest Products  */}
+      <h3 className="mb-4">
+        <span className="text-danger">Python Products</span>
+        <a href="#" className="float-end btn btn-sm btn-dark m-0 ">
+          View All Products <i className="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </h3>
+      <div className="row mb-4">
+        <SingleProduct title="Django Project" />
+        <SingleProduct title="Python Project" />
+        <SingleProduct title="Flask Project" />
+        <SingleProduct title="FastAPI Project" />
+        <SingleProduct title="AI Project" />
+        <SingleProduct title="ML Project" />
+        <SingleProduct title="DL Project" />
+        <SingleProduct title="AR Project" />
+      </div>
+      {/* End Latest Products  */}
+
+      {/* Pagination  */}
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              1
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              2
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              3
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  );
+};
+
+export default CategoryProducts;
