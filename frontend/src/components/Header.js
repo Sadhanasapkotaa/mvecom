@@ -72,14 +72,14 @@ const Header = () => {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <Link to="/customer/dashboard/" className="dropdown-item">
                       Dashboard
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <Link to="/customer/login/" className="dropdown-item">
                       Log Out
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
