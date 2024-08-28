@@ -12,6 +12,8 @@ import CategoryProducts from "./components/CategoryProducts";
 import AllProducts from "./components/AllProducts";
 import ProductDetail from "./components/ProductDetail";
 import Checkout from "./components/Checkout";
+
+// Customer Routes 
 import Register from "./components/Customer/Register";
 import Login from "./components/Customer/Login";
 import Dashboard from "./components/Customer/Dashboard";
@@ -23,6 +25,11 @@ import OrderSuccess from "./components/OrderSuccess";
 import OrderFailure from "./components/OrderFailure";
 import Address from "./components/Customer/Address";
 import AddAddress from "./components/Customer/AddAddress";
+
+// Seller Routes
+import SellerRegister from "./components/Seller/SellerRegister";
+import SellerLogin from "./components/Seller/SellerLogin";
+import SellerDashboard from "./components/Customer/Dashboard";
 
 function App() {
   return (
@@ -52,6 +59,10 @@ function App() {
         <Route path="/customer/change-password/" element={<ChangePassword />} />
         <Route path="/customer/address/" element={<Address />} />
         <Route path="/customer/address/add-address" element={<AddAddress />} />
+        {/* Seller  */}
+        <Route path="/seller/register/" element={<SellerRegister />} />
+        <Route path="/seller/login/" element={<SellerLogin />} />
+        <Route path="/seller/dashboard/" element={<SellerDashboard />} />
 
       </Routes>
       <Footer />

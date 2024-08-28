@@ -3,7 +3,7 @@ import React from "react";
 const Login = () => {
   return (
     <section className="container mt-4">
-      <h3 className="mb-4">Login</h3>
+      <h3 className="mb-4">Seller Login</h3>
       <div className="row">
         <div className="col-md-8 col-12 offset-2">
           <div className="card">
