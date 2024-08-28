@@ -1,6 +1,6 @@
 import React from "react";
 
-const Profile = () => {
+const Address = () => {
   return (
     <section className="container mt-4">
       <h3 className="mb-4">Profile</h3>
@@ -47,4 +47,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Address;

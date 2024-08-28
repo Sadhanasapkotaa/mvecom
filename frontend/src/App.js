@@ -21,6 +21,7 @@ import Profile from "./components/Customer/Profile";
 import ChangePassword from "./components/Customer/ChangePassword";
 import OrderSuccess from "./components/OrderSuccess";
 import OrderFailure from "./components/OrderFailure";
+import Address from "./components/Customer/Address";
 
 function App() {
   return (
@@ -46,6 +47,8 @@ function App() {
         <Route path="/customer/dashboard/" element={<Dashboard />} />
         <Route path="/customer/orders/" element={<Orders />} />
         <Route path="/customer/wishlist/" element={<Wishlist />} />
+        <Route path="/customer/profile/" element={<Profile />} />
+        <Route path="/customer/address/" element={<Address />} />
       </Routes>
       <Footer />
     </>
