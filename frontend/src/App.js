@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Routes, Route } from "react-router-dom"; // Fixed import
-
+// source env/bin/activate 
 // Components Import
 import Header from "./components/Header";
 import Footer from "./components/Footer";
