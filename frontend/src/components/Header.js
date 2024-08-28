@@ -47,6 +47,12 @@ const Header = () => {
                 </Link>
               </li>
 
+              <li className="nav-item">
+                <Link className="nav-link" to="/checkout/">
+                  New Orders (9)
+                </Link>
+              </li>
+
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -56,6 +62,43 @@ const Header = () => {
                   aria-expanded="false"
                 >
                   My Account
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to="/customer/register/" className="dropdown-item">
+                      Register
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/customer/login/" className="dropdown-item">
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link to="/customer/dashboard/" className="dropdown-item">
+                      Dashboard
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/customer/login/" className="dropdown-item">
+                      Log Out
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Seller Panel
                 </a>
                 <ul className="dropdown-menu">
                   <li>

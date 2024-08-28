@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Categories from "./components/Categories";
 import CategoryProducts from "./components/CategoryProducts";
-import SingleProduct from "./components/SingleProduct";
+// import SingleProduct from "./components/SingleProduct";
 import AllProducts from "./components/AllProducts";
 import ProductDetail from "./components/ProductDetail";
 import Checkout from "./components/Checkout";
@@ -22,6 +22,7 @@ import ChangePassword from "./components/Customer/ChangePassword";
 import OrderSuccess from "./components/OrderSuccess";
 import OrderFailure from "./components/OrderFailure";
 import Address from "./components/Customer/Address";
+import AddAddress from "./components/Customer/AddAddress";
 
 function App() {
   return (
@@ -48,7 +49,10 @@ function App() {
         <Route path="/customer/orders/" element={<Orders />} />
         <Route path="/customer/wishlist/" element={<Wishlist />} />
         <Route path="/customer/profile/" element={<Profile />} />
+        <Route path="/customer/change-password/" element={<ChangePassword />} />
         <Route path="/customer/address/" element={<Address />} />
+        <Route path="/customer/address/add-address" element={<AddAddress />} />
+
       </Routes>
       <Footer />
     </>

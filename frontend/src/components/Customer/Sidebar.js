@@ -20,6 +20,10 @@ const Sidebar = () => {
         <li className="list-group-item">Profile</li>
       </Link>
 
+      <Link to="/customer/password">
+        <li className="list-group-item">Password</li>
+      </Link>
+
       <Link to="/customer/address">
         <li className="list-group-item">Adress</li>
       </Link>

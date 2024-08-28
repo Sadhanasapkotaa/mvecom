@@ -4,22 +4,21 @@ import logo from "../../logo.svg";
 import { Link } from "react-router-dom";
 
 const Wishlist = () => {
-  return (
-    <section className="container">
-      <div className="row">
-        <div className="col-md-3 col-12 mb-2">
-          <Sidebar />
-        </div>
-        <div className="col-md-9 col-12 mb-2">
-          <div className="row">
+    return (
+        <section className="container mt-4">
+            <div className="row">
+                <div className="col-md-3 col-12 mb-2">
+                    <Sidebar />
+                </div>
+                    <div className="col-md-8 col-12">
+                    <div className="row">
             <div className="table-responsive">
               <table className="table table-bordered">
                 <thead>
                   <tr>
-                    <th>Order ID</th>
+                    <th>#</th>
                     <th>Product</th>
                     <th>Price</th>
-                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -39,12 +38,7 @@ const Wishlist = () => {
                     </td>
                     <td>Rs. 200</td>
                     <td>
-                      <span className="text-success">
-                        Completed <i className="fa fa-check-circle"></i>
-                      </span>
-                    </td>
-                    <td>
-                      <div className="btn btn-primary">Download</div>
+                      <div className="btn btn-danger">Remove</div>
                     </td>
                   </tr>
                   <tr>
@@ -62,12 +56,7 @@ const Wishlist = () => {
                     </td>
                     <td>Rs. 200</td>
                     <td>
-                      <span className="text-secondary">
-                        Processing <i className="fa fa-spin fa-spinner"></i>
-                      </span>
-                    </td>
-                    <td>
-                      {/* <div className="btn btn-primary">Download</div> */}
+                      <div className="btn btn-danger">Remove</div>
                     </td>
                   </tr>
                   <tr>
@@ -85,12 +74,7 @@ const Wishlist = () => {
                     </td>
                     <td>Rs. 200</td>
                     <td>
-                      <span className="text-danger">
-                        Completed <i className="fa fa-times-circle"></i>
-                      </span>
-                    </td>
-                    <td>
-                      {/* <div className="btn btn-primary">Download</div> */}
+                      <div className="btn btn-danger">Remove</div>
                     </td>
                   </tr>
                   <tr>
@@ -108,22 +92,19 @@ const Wishlist = () => {
                     </td>
                     <td>Rs. 200</td>
                     <td>
-                      <span className="text-success">
-                        Completed <i className="fa fa-check-circle"></i>
-                      </span>
-                    </td>
-                    <td>
-                      <div className="btn btn-primary">Download</div>
+                      <div className="btn btn-danger">Remove</div>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+                    </div>
+                </div>
+    </section >
   );
 };
+
+
 
 export default Wishlist;

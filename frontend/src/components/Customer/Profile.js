@@ -1,6 +1,5 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import { Link } from "react-router-dom";
 
 const Profile = () => {
     return (
@@ -15,7 +14,31 @@ const Profile = () => {
                             <div className="card-body">
                                 <form>
                                     <div className="mb-3">
-                                        <label htmlFor="name" className="form-label">
+                                        <label htmlFor="firstname" className="form-label">
+                                            First Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="firstname"
+                                            name="firstname"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="lastname" className="form-label">
+                                            Last Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="lastname"
+                                            name="lastname"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="username" className="form-label">
                                             User Name
                                         </label>
                                         <input
@@ -26,21 +49,32 @@ const Profile = () => {
                                             required
                                         />
                                     </div>
-
                                     <div className="mb-3">
-                                        <label htmlFor="password" className="form-label">
-                                            Password
+                                        <label htmlFor="email" className="form-label">
+                                        Email
                                         </label>
                                         <input
-                                            type="password"
+                                            type="email"
                                             className="form-control"
-                                            id="password"
-                                            name="password"
+                                            id="email"
+                                            name="email"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="profileimage" className="form-label">
+                                            Profile Image
+                                        </label>
+                                        <input
+                                            type="file"
+                                            className="form-control"
+                                            id="profileimage"
+                                            name="profileimage"
                                             required
                                         />
                                     </div>
                                     <button type="submit" className="btn btn-primary">
-                                        Login
+                                        Set Profile
                                     </button>
                                 </form>
                             </div>
