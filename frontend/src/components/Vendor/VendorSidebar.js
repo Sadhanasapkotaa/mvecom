@@ -20,7 +20,7 @@ const VendorSidebar = () => {
         <li className="list-group-item">Orders</li>
       </Link>
 
-      <Link to="/vendor/cusomers">
+      <Link to="/vendor/customers">
         <li className="list-group-item">Customers</li>
       </Link>
 
@@ -28,6 +28,10 @@ const VendorSidebar = () => {
         <li className="list-group-item">Reports</li>
       </Link>
 
+      <Link to="/vendor/profile">
+        <li className="list-group-item">Profile</li>
+      </Link>
+      
       <Link to="/vendor/password">
         <li className="list-group-item">Password</li>
       </Link>
