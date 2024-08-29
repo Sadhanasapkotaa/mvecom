@@ -98,16 +98,16 @@ const Header = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Seller Panel
+                  Vendor Panel
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to="/customer/register/" className="dropdown-item">
+                    <Link to="/vendor/register/" className="dropdown-item">
                       Register
                     </Link>
                   </li>
                   <li>
-                    <Link to="/customer/login/" className="dropdown-item">
+                    <Link to="/vendor/login/" className="dropdown-item">
                       Login
                     </Link>
                   </li>
@@ -115,12 +115,12 @@ const Header = () => {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <Link to="/customer/dashboard/" className="dropdown-item">
+                    <Link to="/vendor/dashboard/" className="dropdown-item">
                       Dashboard
                     </Link>
                   </li>
                   <li>
-                    <Link to="/customer/login/" className="dropdown-item">
+                    <Link to="/vendor/login/" className="dropdown-item">
                       Log Out
                     </Link>
                   </li>

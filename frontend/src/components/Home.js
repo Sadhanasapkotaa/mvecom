@@ -109,22 +109,22 @@ const Home = () => {
         </div>
         {/* End Popular Products  */}
 
-        {/* Popular Sellers  */}
+        {/* Popular Vendors  */}
         <h3 className="mb-4">
-          Popular Sellers
+          Popular Vendors
           <a href="#" className="float-end btn btn-sm btn-dark m-0 ">
-            All Sellers <i className="fa-solid fa-arrow-right-long"></i>
+            All Vendors <i className="fa-solid fa-arrow-right-long"></i>
           </a>
         </h3>
 
         <div className="row mb-4">
-          {/* Seller Box Starts */}
+          {/* Vendor Box Starts */}
           <div className="col-12 col-md-3 mb-4">
             <div className="card shadow">
               <img src={logo} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">
-                  <b>Seller Name</b>
+                  <b>Vendor Name</b>
                 </h5>
               </div>
               <div className="card-footer">
@@ -132,15 +132,15 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* Seller Box Ends  */}
+          {/* Vendor Box Ends  */}
 
-          {/* Seller Box Starts */}
+          {/* Vendor Box Starts */}
           <div className="col-12 col-md-3 mb-4">
             <div className="card shadow">
               <img src={logo} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">
-                  <b>Seller Name</b>
+                  <b>Vendor Name</b>
                 </h5>
               </div>
               <div className="card-footer">
@@ -148,15 +148,15 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* Seller Box Ends  */}
+          {/* Vendor Box Ends  */}
 
-          {/* Seller Box Starts */}
+          {/* Vendor Box Starts */}
           <div className="col-12 col-md-3 mb-4">
             <div className="card shadow">
               <img src={logo} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">
-                  <b>Seller Name</b>
+                  <b>Vendor Name</b>
                 </h5>
               </div>
               <div className="card-footer">
@@ -164,15 +164,15 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* Seller Box Ends  */}
+          {/* Vendor Box Ends  */}
 
-          {/* Seller Box Starts */}
+          {/* Vendor Box Starts */}
           <div className="col-12 col-md-3 mb-4">
             <div className="card shadow">
               <img src={logo} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">
-                  <b>Seller Name</b>
+                  <b>Vendor Name</b>
                 </h5>
               </div>
               <div className="card-footer">
@@ -180,7 +180,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* Seller Box Ends  */}
+          {/* Vendor Box Ends  */}
         </div>
 
         {/* End Popular Categories  */}

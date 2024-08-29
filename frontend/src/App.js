@@ -26,10 +26,13 @@ import OrderFailure from "./components/OrderFailure";
 import Address from "./components/Customer/Address";
 import AddAddress from "./components/Customer/AddAddress";
 
-// Seller Routes
-import SellerRegister from "./components/Seller/SellerRegister";
-import SellerLogin from "./components/Seller/SellerLogin";
-import SellerDashboard from "./components/Customer/Dashboard";
+// Vendor Routes
+import VendorRegister from "./components/Vendor/VendorRegister";
+import VendorLogin from "./components/Vendor/VendorLogin";
+import VendorDashboard from "./components/Vendor/VendorDashboard";
+import VendorProducts from "./components/Vendor/VendorProducts";
+import AddProduct from "./components/Vendor/AddProduct";
+import VendorOrders from "./components/Vendor/VendorOrders";
 
 function App() {
   return (
@@ -59,10 +62,13 @@ function App() {
         <Route path="/customer/change-password/" element={<ChangePassword />} />
         <Route path="/customer/address/" element={<Address />} />
         <Route path="/customer/address/add-address" element={<AddAddress />} />
-        {/* Seller  */}
-        <Route path="/seller/register/" element={<SellerRegister />} />
-        <Route path="/seller/login/" element={<SellerLogin />} />
-        <Route path="/seller/dashboard/" element={<SellerDashboard />} />
+        {/* Vendor  */}
+        <Route path="/vendor/register/" element={<VendorRegister />} />
+        <Route path="/vendor/login/" element={<VendorLogin />} />
+        <Route path="/vendor/dashboard/" element={<VendorDashboard />} />
+        <Route path="/vendor/products/" element={<VendorProducts />} />
+        <Route path="/vendor/add-product/" element={<AddProduct />} />
+        <Route path="/vendor/orders/" element={<VendorOrders />} />
 
       </Routes>
       <Footer />

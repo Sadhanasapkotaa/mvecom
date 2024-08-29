@@ -3,7 +3,7 @@ import React from "react";
 const Register = (props) => {
   return (
     <section className="container mt-4">
-      <h3 className="mb-4">Seller Register</h3>
+      <h3 className="mb-4">Vendor Register</h3>
       <div className="row">
         <div className="col-md-8 col-12 offset-2">
           <div className="card">
