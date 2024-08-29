@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -133,9 +135,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Project Level Authentication
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
     # 'DEFAULT_AUTHENTICATION_CLASSES': (
     #     'rest_framework_simplejwt.authentication.JWTAuthentication',
     # ),
@@ -144,32 +146,35 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-#     'ROTATE_REFRESH_TOKENS': True,
-#     'BLACKLIST_AFTER_ROTATION': True,
-#     'UPDATE_LAST_LOGIN': True,
-#     'ALGORITHM': 'HS256',
-#     'SIGNING_KEY': settings.SECRET_KEY,
-#     'VERIFYING_KEY': None,
-#     'AUTH_HEADER_TYPES': ('Bearer',),
-#     'USER_ID_FIELD': 'id',
-#     'USER_ID_CLAIM': 'user_id',
-#     'AUTH_TOKEN_CLASSES': ('access', 'refresh'),
-#     'TOKEN_TYPE_CLAIM': 'token_type',
-# }
+# Allow all origins (use with caution)
+CORS_ALLOW_ALL_ORIGINS = True
 
+# OR specify allowed origins
+CORS_ALLOWED_ORIGINS = [
+    "https://bookish-rotary-phone-rv4j7w56vxqcp65r-3000.app.github.dev",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
 
-# HTTP/1.1 200 OK
-# Allow: POST, OPTIONS
-# Content-Length: 483
-# Content-Type: application/json
-# Cross-Origin-Opener-Policy: same-origin
-# Date: Wed, 21 Aug 2024 08:50:35 GMT    
-# Referrer-Policy: same-origin
-# Server: WSGIServer/0.2 CPython/3.12.1  
-# Vary: Accept
-# idXNlcl9pZCI6MX0.8oe7tffeTJWZTcyfhbJ8-iCwnBcTZmU4LWG89y5aP4E",
-#     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDMxNjYzNSwiaWF0IjoxNzI0MjMwMjM1LCJqdGkiOiIwNjAwYjdjMGQ3MjM0MGYwYjUxYTAxZDBhYTU3NTYzMyIsInVzZXJfaWQiOjF9.jnbOrM8anCYLbEIgw3a0ALGGR831DgHuc8JMVVQBIv8"
-# }
+# Allow credentials (if needed)
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow specific headers
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrftoken',
+    # other headers you want to allow
+]
+
+# Allow methods
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+
+# Add other settings as needed

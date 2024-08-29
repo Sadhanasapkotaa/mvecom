@@ -13,14 +13,9 @@ const AllProducts = () => {
         </a>
       </h3>
       <div className="row mb-4">
+       
         <SingleProduct title="Django Project" />
-        <SingleProduct title="Python Project" />
-        <SingleProduct title="Flask Project" />
-        <SingleProduct title="FastAPI Project" />
-        <SingleProduct title="AI Project" />
-        <SingleProduct title="ML Project" />
-        <SingleProduct title="DL Project" />
-        <SingleProduct title="AR Project" />
+        
       </div>
       {/*  All Products End  */}
 

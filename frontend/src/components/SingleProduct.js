@@ -12,10 +12,10 @@ const SingleProduct = (props) => {
 
         <div className="card-body">
           <Link to="/product/python-timer/123">
-            <h5 className="card-title">{props.title}</h5>
+            <h5 className="card-title">{props.product.title}</h5>
           </Link>
 
-          <h6 className="card-title text-muted">Price: Rs. 50,000</h6>
+          <h6 className="card-title text-muted">Price: Rs. {props.product.price}</h6>
         </div>
 
         <div className="card-footer">
