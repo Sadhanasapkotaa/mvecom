@@ -2,11 +2,35 @@ import React from "react";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 import SingleProduct from "./SingleProduct";
+
 const Home = () => {
+   const products = [
+    {
+      "id": 1,
+      "title": "Python",
+      "price": "500"
+    },
+    {
+      "id": 2,
+      "title": "Django",
+      "price": "500"
+    },
+    {
+      "id": 3,
+      "title": "Flask",
+      "price": "500"
+    },
+    {
+      "id": 4,
+      "title": "PHP",
+      "price": "500"
+    },
+  ];
+
   return (
     <main className="mt-4">
       <div className="container">
-        <h1 className="text-center">This is Business</h1>
+        {/* <h1 className="text-center">This is Business</h1> */}
         {/* Latest Products  */}
         <h3 className="mb-4">
           Latest Products
@@ -15,15 +39,12 @@ const Home = () => {
           </Link>
         </h3>
         <div className="row mb-4">
-          <SingleProduct title="Django Project" />
-          <SingleProduct title="Python Project" />
-          <SingleProduct title="Flask Project" />
-          <SingleProduct title="FastAPI Project" />
-          <SingleProduct title="AI Project" />
-          <SingleProduct title="ML Project" />
-          <SingleProduct title="DL Project" />
-          <SingleProduct title="AR Project" />
-        </div>
+       
+        {products.map((product) => (
+            <SingleProduct  product={product} key={product.id} />
+          ))}
+         
+       </div>
         {/* End Latest Products  */}
 
         {/* Popular Categories  */}
@@ -102,10 +123,10 @@ const Home = () => {
           </a>
         </h3>
         <div className="row mb-4">
-          <SingleProduct title="AI Project" />
+          {/* <SingleProduct title="AI Project" />
           <SingleProduct title="ML Project" />
           <SingleProduct title="DL Project" />
-          <SingleProduct title="AR Project" />
+          <SingleProduct title="AR Project" /> */}
         </div>
         {/* End Popular Products  */}
 

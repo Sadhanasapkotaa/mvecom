@@ -1,8 +1,49 @@
 import React from "react";
 import logo from "../logo.svg";
 import SingleProduct from "./SingleProduct";
-
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const AllProducts = () => {
+
+  const baseurl = "https://bookish-rotary-phone-rv4j7w56vxqcp65r-8000.app.github.dev/api";
+  const [Products, setProducts] = useState([]);
+  const [totalResults, setTotalResults] = useState(0);
+
+  useEffect(() => {
+    fetchData(baseurl+"/products/");
+  }, []);
+
+  function fetchData(baseurl){
+    fetch(baseurl)
+    .then((response) => response.json())
+    .then((data) => {
+      setProducts(data.results)
+      setTotalResults(data.count) 
+  })
+    .catch((error) => console.log("Error", error))
+  }
+
+  function changeUrl (changedUrl){
+    fetchData(changedUrl)
+  }
+
+  let links = [];
+  let limit= 1;
+  let totalLinks = totalResults / limit;
+
+  for (let i = 1; i <= totalLinks; i++) {
+    links.push(
+      <li className="page-item">
+        <Link to={`/products/?page=${i}`} onClick ={()=> changeUrl(baseurl+`/products/?offset=${i-1}`)} className="page-link" >
+          {i}
+        </Link>
+      </li>
+    );
+  }
+  
+  console.log(Products)
+  console.log(typeof(Products))
+
   return (
     <section className="container mt-4">
       {/* All Products  */}
@@ -14,7 +55,11 @@ const AllProducts = () => {
       </h3>
       <div className="row mb-4">
        
-        <SingleProduct title="Django Project" />
+      {
+      Products.map((product) => (
+      <SingleProduct key={product.id} product={product} />
+    ))
+    }
         
       </div>
       {/*  All Products End  */}
@@ -22,31 +67,7 @@ const AllProducts = () => {
       {/* Pagination  */}
       <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
-              1
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
-              2
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
-              3
-            </a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
+         {links}
         </ul>
       </nav>
     </section>
@@ -54,3 +75,5 @@ const AllProducts = () => {
 };
 
 export default AllProducts;
+ 
+

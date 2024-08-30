@@ -143,7 +143,7 @@ REST_FRAMEWORK = {
     # ),
     'DEFAULT_PAGINATION_CLASS': 'main.pagination.CustomPagination',
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PagrNumberPagination',
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 1,
 }
 
 # Allow all origins (use with caution)
