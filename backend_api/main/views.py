@@ -20,6 +20,8 @@ class ProductList(generics.ListCreateAPIView):
     serializer_class = serializers.ProductListSerializer
     pagination_class = pagination.LimitOffsetPagination
 
+    
+
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Product.objects.all()
     serializer_class = serializers.ProductDetailSerializer

@@ -8,8 +8,9 @@ const CategoryProducts = () => {
   const baseurl = "https://bookish-rotary-phone-rv4j7w56vxqcp65r-8000.app.github.dev/api";
   const [Products, setProducts] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
-  const { category_id } = useParams();
+  const { category_slug, category_id } = useParams();
   console.log(category_id);
+  console.log(category_slug);
 
   useEffect(() => {
     fetchData(baseurl+"/products/?category="+category_id);
@@ -43,8 +44,6 @@ const CategoryProducts = () => {
     );
   }
   
-  console.log(Products)
-  console.log(typeof(Products))
 
   return (
     <section className="container mt-4">
