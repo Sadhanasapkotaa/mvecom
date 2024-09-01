@@ -6,12 +6,12 @@ const SingleProduct = (props) => {
   return (
     <div className="col-12 col-md-3 mb-4">
       <div className="card shadow">
-        <Link to="/product/python-timer/123">
+        <Link to={`/product/${props.product.title}/${props.product.id}`}>
           <img src={logo} className="card-img-top" alt="..." />
         </Link>
 
         <div className="card-body">
-          <Link to="/product/python-timer/123">
+          <Link to={`/product/${props.product.title}/${props.product.id}`}>
             <h5 className="card-title">{props.product.title}</h5>
           </Link>
 

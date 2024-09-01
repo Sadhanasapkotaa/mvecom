@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -144,8 +145,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'main.pagination.CustomPagination',
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PagrNumberPagination',
     'PAGE_SIZE': 1,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
 
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
+
+# CORS Settings
 # Allow all origins (use with caution)
 CORS_ALLOW_ALL_ORIGINS = True
 

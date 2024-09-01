@@ -1,3 +1,4 @@
+from warnings import filters
 from django.shortcuts import render
 from . import models
 from . import serializers
@@ -19,6 +20,19 @@ class ProductList(generics.ListCreateAPIView):
     queryset = models.Product.objects.all()
     serializer_class = serializers.ProductListSerializer
     pagination_class = pagination.LimitOffsetPagination
+    filterset_fields = ['category']
+    def get_queryset(self):
+        qs = super().get_queryset()
+        category_id = self.request.GET.get('category')  # Correct way to get query parameter
+        
+        if category_id:
+            try:
+                category = models.ProductCategory.objects.get(id=category_id)
+                qs = qs.filter(category=category)
+            except models.ProductCategory.DoesNotExist:
+                # Handle the case where the category does not exist
+                qs = qs.none()  # Or handle as appropriate
+        return qs
 
     
 

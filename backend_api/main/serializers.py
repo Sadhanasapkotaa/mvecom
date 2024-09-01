@@ -37,9 +37,10 @@ class ProductListSerializer(serializers.ModelSerializer):
 # Product Detail 
 class ProductDetailSerializer(serializers.ModelSerializer):
     product_ratings = serializers.StringRelatedField(many=True, read_only=True)
+    product_imgs = serializers.StringRelatedField(many=True, read_only=True)
     class Meta:
         model = models.Product
-        fields = ['id', 'category', 'vendor', 'title', 'detail', 'price', 'product_ratings']   
+        fields = ['id', 'category', 'vendor', 'title', 'detail', 'price', 'product_ratings', 'product_imgs']   
 
     def __init__(self, *args, **kwargs):
         super(ProductDetailSerializer, self).__init__(*args, **kwargs)
@@ -116,7 +117,7 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'detail']  
     
     def __init__(self, *args, **kwargs):
-        super(VendorSerializer, self).__init__(*args, **kwargs)
+        super(CategorySerializer, self).__init__(*args, **kwargs)
         # self.Meta.depth = 1 
 
 

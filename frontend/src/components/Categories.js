@@ -11,7 +11,7 @@ const Categories = () => {
   const itemsPerPage = 1; // Adjust this as per your API's pagination settings
 
   useEffect(() => {
-    fetchData(baseurl + "/categories/?limit=" + itemsPerPage + "&offset=" + (currentPage - 1) * itemsPerPage);
+    fetchData(baseurl+`/categories/?page=${currentPage}`);
   }, [currentPage]);
 
   function fetchData(url) {

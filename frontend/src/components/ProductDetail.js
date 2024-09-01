@@ -1,9 +1,31 @@
 import React from "react";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
-import SingleProduct from "./SingleProduct";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const ProductDetail = () => {
+  const baseurl = "https://bookish-rotary-phone-rv4j7w56vxqcp65r-8000.app.github.dev/api";
+  const [productData, setProductData] = useState([]);
+  const { product_slug, product_id } = useParams();
+  console.log(product_slug, product_id);
+
+  useEffect(() => {
+    fetchData(`${baseurl}/product/${product_id}`);
+  }, [product_id]);
+
+  function fetchData(baseurl) {
+    fetch(baseurl)
+      .then((response) => response.json())
+      .then((data) => {
+        setProductData(data);
+      })
+      .catch((error) => console.log("Error", error));
+  }
+
+  console.log(productData);
+
+  
   return (
     <section className="container mt-4">
       <div className="row">
@@ -72,14 +94,11 @@ const ProductDetail = () => {
           </div>
         </div>
         <div className="col-8">
-          <h3>Product Title</h3>
+          <h3>{productData.title}</h3>
           <p>
-            Product Description Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Molestias eaque pariatur quidem. Sunt culpa
-            reprehenderit debitis accusantium officia minima repellat totam quos
-            itaque a, et corrupti aliquid nam dolore excepturi!
+           {productData.detail}
           </p>
-          <h6 className="card-title text-muted">Price: Rs. 50,000</h6>
+          <h6 className="card-title text-muted">Price: Rs. {productData.price}</h6>
           <p className="mt-3 d-flex gap-3">
             <Link title="Demo" target="_blank" className="btn btn-dark btn-sm">
               <i title="Add to Wishlist" className="fa-solid fa-cart-plus"></i>{" "}
@@ -146,7 +165,7 @@ const ProductDetail = () => {
             aria-label="Slide 3"
           ></button>
         </div>
-        <div className="carousel-inner">
+        {/* <div className="carousel-inner">
           <div className="carousel-item active">
             <div className="row mb-5">
               <SingleProduct title="AI Project" />
@@ -171,7 +190,7 @@ const ProductDetail = () => {
               <SingleProduct title="AI Project" />
             </div>
           </div>
-        </div>
+        </div> */}
         {/* <button
           className="carousel-control-prev"
           type="button"
