@@ -7,8 +7,10 @@ import { useState, useEffect } from "react";
 const ProductDetail = () => {
   const baseurl = "https://bookish-rotary-phone-rv4j7w56vxqcp65r-8000.app.github.dev/api";
   const [productData, setProductData] = useState([]);
+  const [productImgs, setProductImgs] = useState([]);
   const { product_slug, product_id } = useParams();
   console.log(product_slug, product_id);
+
 
   useEffect(() => {
     fetchData(`${baseurl}/product/${product_id}`);
@@ -18,12 +20,14 @@ const ProductDetail = () => {
     fetch(baseurl)
       .then((response) => response.json())
       .then((data) => {
-        setProductData(data);
+        setProductData(data)
+        setProductImgs(data.product_imgs)
       })
       .catch((error) => console.log("Error", error));
   }
+  // productData.product_imgs
 
-  console.log(productData);
+  console.log(productImgs);
 
   
   return (
@@ -35,37 +39,34 @@ const ProductDetail = () => {
             className="carousel carousel-dark carousel-fade slide p-5 mt-4"
           >
             <div className="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#productThumbnailSlider"
-                data-bs-slide-to="0"
-                className="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#productThumbnailSlider"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#productThumbnailSlider"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
+            {productImgs.map((img, index) => (
+          <button
+            type="button"
+            key={index}
+            data-bs-target="#productThumbnailSlider"
+            data-bs-slide-to={index}
+            className={index === 0 ? "active" : ""}
+            aria-current={index === 0 ? "true" : undefined}
+            aria-label={`Slide ${index + 1}`}
+          ></button>
+        ))}
             </div>
             <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img src={logo} className="img-thumbnail" alt="..." />
-              </div>
-              <div className="carousel-item">
-                <img src={logo} className="img-thumbnail" alt="..." />
-              </div>
-              <div className="carousel-item">
-                <img src={logo} className="img-thumbnail" alt="..." />
-              </div>
+            
+            {productImgs.map((img, index) => (
+          <div
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+            key={index}
+          >
+            <img
+              src={img}
+              className="d-block w-100"
+              alt={`Slide ${index + 1}`}
+            />
+          </div>
+        ))}
+
+
             </div>
             <button
               className="carousel-control-prev"

@@ -77,12 +77,9 @@ function App() {
         <Route path="/vendor/customers/" element={<VendorCustomer />} />
         <Route path="/vendor/reports/" element={<VendorReport />} />
         <Route path="/vendor/profile/" element={<VendorProfile />} />
-
-
       </Routes>
       <Footer />
     </>
   );
 }
-
 export default App;

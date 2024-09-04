@@ -11,3 +11,11 @@ admin.site.register(models.OrderItem)
 admin.site.register(models.CustomerAddress)
 admin.site.register(models.ProductRating)
 admin.site.register(models.ProductImage)
+
+class ProductImageAdmin(admin.StackedInline):
+    prepopulated_fields={'slug':('title',)}  
+    inlines=[
+        ProductImagesInline,
+    ]
+
+admin.site.register(models.Product, ProductImageAdmin)
