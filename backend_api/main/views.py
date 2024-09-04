@@ -72,13 +72,6 @@ class OrderDetail(generics.ListAPIView):
 class CustomerAddressViewset(viewsets.ModelViewSet):
     queryset = models.CustomerAddress.objects.all()
     serializer_class = serializers.CustomerAddressSerializer
-    # permission_classes = [permissions.IsAuthenticated]
-
-        # def get_queryset(self):
-    #     customer_id=self.kwargs['pk']
-    #     order=models.Order.objects.get(id=order_id)
-    #     order_items=models.OrderItem.objects.filter(order=order)
-    #     return order_items
 
 # Product Rating Viewset
 class ProductRatingViewset(viewsets.ModelViewSet):
@@ -89,7 +82,6 @@ class ProductRatingViewset(viewsets.ModelViewSet):
 class CategoryList(generics.ListCreateAPIView):
     queryset = models.ProductCategory.objects.all()
     serializer_class = serializers.CategorySerializer
-    # permission_classes = [permissions.IsAuthenticated]
 
 class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.ProductCategory.objects.all()
